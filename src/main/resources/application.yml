@@ -1,0 +1,8 @@
+server:
+  port: 8090
+  context-path:
+
+
+zz:
+  name: zhang
+  age: 24
