@@ -6,3 +6,20 @@ server:
 zz:
   name: zhang
   age: 24
+
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/test
+    username: root
+    password: 123456
+    driverClassName: com.mysql.jdbc.Driver
+    max-active: 20
+    max-idle: 8
+    min-idle: 8
+    initial-size: 10
+
+  jpa:
+      properties:
+        hibernate:
+          hbm2ddl:
+            auto: update
