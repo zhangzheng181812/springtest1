@@ -18,8 +18,15 @@ spring:
     min-idle: 8
     initial-size: 10
 
+  thymeleaf:
+      cache: false
+      prefix: classpath:/templates/
+      suffix: .html
+      encoding: UTF-8
+
   jpa:
       properties:
         hibernate:
           hbm2ddl:
             auto: update
+
