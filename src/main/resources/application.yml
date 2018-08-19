@@ -29,4 +29,5 @@ spring:
         hibernate:
           hbm2ddl:
             auto: update
+      database-platform: org.hibernate.dialect.H2Dialect
 
