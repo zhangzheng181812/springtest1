@@ -7,5 +7,10 @@
 <body>
 <h1 th:inline="text">Hello.v.2</h1>
 <p th:text="${hello}"></p>
+    <form id="form1" method="post" enctype="multipart/form-data" action="file/testUpload">
+        <label for="pic">上传图片:</label>
+        <input type="file" name="pic" id="pic"/><br>
+        <input type="submit" class="easyui-linkbutton" value="上传"/>
+    </form>
 </body>
 </html>
