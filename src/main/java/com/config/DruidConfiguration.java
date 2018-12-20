@@ -10,6 +10,7 @@ public class DruidConfiguration {
 
     @Bean
     public ServletRegistrationBean druidServlet() {
+        //test
         ServletRegistrationBean servletRegistrationBean = new ServletRegistrationBean(new StatViewServlet(), "/druid/*");
         servletRegistrationBean.addInitParameter("loginUsername","admin");
         servletRegistrationBean.addInitParameter("loginPassword","123456");
