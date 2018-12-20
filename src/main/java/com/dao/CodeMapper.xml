@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.dao.CodeMapper">
+
+    <select id="findAll" parameterType="java.util.HashMap" resultType="com.entity.Code">
+        select * from code
+    </select>
+
+    <select id="findOne" parameterType="java.lang.String" resultType="com.entity.Code">
+        select * from code where id = #{0} and code = #{1}
+    </select>
+</mapper>

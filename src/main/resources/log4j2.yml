@@ -6,9 +6,9 @@ Configuration:
       #测试：-Dlog.level.console=warn -Dlog.level.xjj=trace
       #生产：-Dlog.level.console=warn -Dlog.level.xjj=info
       - name: log.level.console
-        value: INFO
+        value: debug
       - name: log.level.xjj
-        value: INFO
+        value: debug
       - name: log.path
         value: /opt/logs
       - name: project.name
@@ -39,7 +39,7 @@ Configuration:
 
   Loggers:
     Root:
-      level: info
+      level: debug
       AppenderRef:
         - ref: CONSOLE
         - ref: ROLLING_FILE
