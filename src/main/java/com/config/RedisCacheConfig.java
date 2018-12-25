@@ -15,7 +15,7 @@ import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 /**
  * Created by admin on 2017/12/5.
  */
-@Configuration
+//@Configuration
 public class RedisCacheConfig {
 
 
