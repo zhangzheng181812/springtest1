@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtils {
 
     @Resource(name="stringRedisTemplate")
-    RedisTemplate redisTemplate;
+    public RedisTemplate redisTemplate;
 
     /**
      * key - value 操作

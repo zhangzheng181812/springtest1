@@ -21,4 +21,9 @@ public class TestRedis {
         redisUtils.set("key1","value1");
         System.out.println(redisUtils.get("key1"));
     }
+
+    @Test
+    public void testRedisListener(){
+        redisUtils.redisTemplate.convertAndSend("topic1","testMessage");
+    }
 }

@@ -1,11 +1,16 @@
 package com.config;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.data.redis.connection.MessageListener;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.listener.ChannelTopic;
+import org.springframework.data.redis.listener.RedisMessageListenerContainer;
 import org.springframework.data.redis.serializer.RedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
+import org.springframework.scheduling.concurrent.ThreadPoolTaskScheduler;
 
 /**
  * Created by admin on 2017/12/5.
@@ -33,6 +38,25 @@ public class RedisCacheConfig {
         template.setHashValueSerializer(stringSerializer );
         template.afterPropertiesSet();
         return template;
+    }
+
+    @Autowired
+    private MessageListener messageListener;
+
+    @Autowired
+    private RedisConnectionFactory connectionFactory;
+
+    @Autowired
+    private ThreadPoolTaskScheduler threadPoolTaskScheduler ;
+
+    @Bean
+    public RedisMessageListenerContainer initRedisContainer(){
+        RedisMessageListenerContainer redisMessageListenerContainer = new RedisMessageListenerContainer();
+        redisMessageListenerContainer.setConnectionFactory(connectionFactory);
+        redisMessageListenerContainer.setTaskExecutor(threadPoolTaskScheduler);
+        ChannelTopic topic1 = new ChannelTopic("topic1");
+        redisMessageListenerContainer.addMessageListener(messageListener,topic1);
+        return redisMessageListenerContainer;
     }
 
 
