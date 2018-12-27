@@ -1,5 +1,6 @@
 package com.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
@@ -17,6 +18,7 @@ public class Demo {
 
     @NotEmpty(message="密码不能为空")
     @Length(min=6,message="密码长度不能小于6位")
+    @JsonProperty("pass")
     private String password;
 
 
