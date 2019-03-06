@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<h1 th:inline="text">Hello.v.2</h1>
+<p th:text="${hello}"></p>
+<form name='f' action='/login/page' method='POST'>
+    <table>
+        <tr><td>User:</td><td><input type='text' name='username' value=''></td></tr>
+        <tr><td>Password:</td><td><input type='password' name='password'/></td></tr>
+        <tr><td><input type='checkbox' name='remember-me'/></td><td>Remember me on this computer.</td></tr>
+        <tr><td colspan='2'><input name="submit" type="submit" value="Login"/></td></tr>
+        <input th:name="${_csrf.parameterName}" th:id="${_csrf.parameterName}" type="hidden" th:value="${_csrf.token}" />
+    </table>
+</form>
+</body>
+</html>

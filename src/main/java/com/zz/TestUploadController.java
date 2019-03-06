@@ -22,25 +22,29 @@ public class TestUploadController {
         if (!file.exists()) {
             file.getParentFile().mkdirs();
         }
-        System.out.println(file.getAbsoluteFile());
-        System.out.println(file.getAbsolutePath());
-        System.out.println(file.getParent());
-        System.out.println(file.getCanonicalPath());
-        System.out.println(file.isAbsolute());
-        System.out.println(file.getPath());
+//        System.out.println(file.getAbsoluteFile());
+//        System.out.println(file.getAbsolutePath());
+//        System.out.println(file.getParent());
+//        System.out.println(file.getCanonicalPath());
+//        System.out.println(file.isAbsolute());
+//        System.out.println(file.getPath());
 ////        pic.transferTo(file);
 //        System.out.println(pic);
 //        URL url = ResourceUtils.getURL("classpath:static/123.txt");
 //        System.out.println(url);
 //        File url1 = ResourceUtils.getFile("classpath:static/123.txt");
 //        System.out.println(url1);
-        File targetFile = new File("/home/zihexin/servers/pics/merchantimg/", "123.txt");
+        File targetFile = new File("home/", "123.txt");
         if (!targetFile.isDirectory()) {
-            File f = new File("/home/zihexin/servers/pics/merchantimg/");
+            File f = new File("home/");
             f.mkdirs();
         } else {
             targetFile.mkdirs();
         }
+        System.out.println(targetFile.getAbsoluteFile());
+        System.out.println(targetFile.getAbsolutePath());
+        System.out.println(targetFile.getParent());
+        System.out.println(targetFile.getCanonicalPath());
         System.out.println(targetFile.getPath());
         System.out.println(targetFile.getName());
         System.out.println(targetFile.getPath()+System.getProperty("file.separator")+"123.txt");

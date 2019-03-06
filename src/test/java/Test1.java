@@ -13,6 +13,9 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.util.SocketUtils;
 
+import java.io.File;
+import java.io.InputStream;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment= SpringBootTest.WebEnvironment.RANDOM_PORT ,classes = Application.class)
 public class Test1 {
@@ -32,5 +35,15 @@ public class Test1 {
 //        leadClient.setHostAddress("111");
         System.out.println(topLeadClient.execute(leadRequest).getResultCode());
 
+    }
+
+
+    @Test
+    public void test2() throws InstantiationException, IllegalAccessException {
+        File file = new File("home/123.txt");
+        String name = file.getName();
+        String path = file.getPath();
+        System.out.println(name);
+        System.out.println(path);
     }
 }

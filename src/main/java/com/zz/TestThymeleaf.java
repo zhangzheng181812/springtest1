@@ -7,6 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.Map;
 
 @Controller
+@RequestMapping({"/testThymeleaf"})
 public class TestThymeleaf {
     @RequestMapping("/helloHtml")
     public ModelAndView helloHtml(ModelAndView modelAndView ){

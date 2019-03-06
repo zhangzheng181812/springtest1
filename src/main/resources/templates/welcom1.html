@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+</head>
+<body>
+<h1 th:inline="text">Hello.v.2 welcom1</h1>
+<p th:text="${hello}"></p>
+    <form id="form1" method="post" enctype="multipart/form-data" action="file/testUpload">
+        <label for="pic">上传图片:</label>
+        <input type="file" name="pic" id="pic"/><br>
+        <input type="submit" class="easyui-linkbutton" value="上传"/>
+    </form>
+
+<form id="form2" method="post"  action="/logout/page">
+    <input type="submit" class="easyui-linkbutton" value="logout"/>
+    <input th:name="${_csrf.parameterName}" th:id="${_csrf.parameterName}" type="hidden" th:value="${_csrf.token}" />
+</form>
+</body>
+</html>
