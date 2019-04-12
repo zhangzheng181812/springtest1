@@ -33,7 +33,7 @@ public class Test1 {
         LeadSignQueryRequest leadRequest = new LeadSignQueryRequest();
 //        System.out.println(leadClient.execute(leadRequest).getResultCode());
 //        leadClient.setHostAddress("111");
-        System.out.println(topLeadClient.execute(leadRequest).getResultCode());
+        System.out.println(topLeadClient.execute(leadRequest));
 
     }
 
