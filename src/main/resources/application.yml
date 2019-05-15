@@ -56,3 +56,12 @@ spring:
 mybatis:
   mapperLocations: classpath*:com/dao/*Mapper.xml
   typeAliasesPackage: com.entity
+
+management:
+  port: 9091
+  security:
+    enabled: false
+
+endpoints:
+  autoconfig:
+    enabled: true
