@@ -1,4 +1,4 @@
-package com.book.three;
+package com.book.mongo;
 
 
 import lombok.Getter;

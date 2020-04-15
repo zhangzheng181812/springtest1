@@ -73,7 +73,7 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
 
             .and().authorizeRequests()
                 .antMatchers("/testThymeleaf/helloHtml").hasAuthority("ADMIN")
-                .antMatchers("/test/**").hasAuthority("user")
+                .antMatchers("/test/**").hasAuthority("USER")
                 //其他路径允许签名后访问
                 .anyRequest().permitAll()
                 //对于没有配置权限的其他请求允许匿名访问

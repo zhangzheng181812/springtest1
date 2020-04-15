@@ -23,6 +23,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         List<String> roles = new ArrayList<>();
 //        roles.add("admin2");
         roles.add("ADMIN");
+        roles.add("USER");
         List<GrantedAuthority> auths = new ArrayList<>();
         for (String s :roles
              ) {

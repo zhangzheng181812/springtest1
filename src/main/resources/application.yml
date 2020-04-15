@@ -17,10 +17,10 @@ spring:
 #      password: 123456
 
   datasource:
-    url: jdbc:mysql://localhost:3306/test
+    url: jdbc:mysql://localhost:3306/test?useSSL=false
     username: root
     password: root
-    driverClassName: com.mysql.jdbc.Driver
+    driverClassName: com.mysql.cj.jdbc.Driver
     max-active: 20
     max-idle: 8
     min-idle: 8
@@ -40,7 +40,7 @@ spring:
         hbm2ddl:
           auto: update
     show-sql: true
-#      database-platform: org.hibernate.dialect.H2Dialect
+    database-platform: org.hibernate.dialect.MySQL5Dialect
 
   redis:
     host: 10.6.4.154
@@ -54,6 +54,7 @@ spring:
         maxActive: 50
 
 mybatis:
+  #当mybatis的xml文件和mapper接口不在相同包下时，需要用mapperLocations属性指定xml文件的路径。
   mapperLocations: classpath*:com/dao/*Mapper.xml
   typeAliasesPackage: com.entity
 

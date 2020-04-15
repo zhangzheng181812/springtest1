@@ -1,7 +1,7 @@
 import com.Application;
-import com.book.three.Role;
-import com.book.three.User;
-import com.book.three.UserService;
+import com.book.mongo.Role;
+import com.book.mongo.User;
+import com.book.mongo.UserService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

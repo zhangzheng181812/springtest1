@@ -1,4 +1,4 @@
-package com.book.two;
+package com.book.redisMessageListener;
 
 
 import org.springframework.data.redis.connection.Message;

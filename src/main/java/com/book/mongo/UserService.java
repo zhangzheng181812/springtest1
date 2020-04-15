@@ -1,4 +1,4 @@
-package com.book.three;
+package com.book.mongo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;

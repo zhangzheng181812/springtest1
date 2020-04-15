@@ -1,5 +1,5 @@
 import com.Application;
-import com.book.one.ConditionConfig;
+import com.book.conditional.ConditionConfig;
 import com.entity.Demo;
 import com.util.JsonUtils;
 import org.junit.Test;
