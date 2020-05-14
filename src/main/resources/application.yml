@@ -56,6 +56,7 @@ spring:
 mybatis:
   #当mybatis的xml文件和mapper接口不在相同包下时，需要用mapperLocations属性指定xml文件的路径。
   mapperLocations: classpath*:com/dao/*Mapper.xml
+  #当mybatis的entity对象对应的表名称不一致时，次配置用来扫描自定义别名的包，需要与@Alias联合使用
   typeAliasesPackage: com.entity
 
 management:
