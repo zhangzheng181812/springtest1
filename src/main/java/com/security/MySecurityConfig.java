@@ -9,6 +9,7 @@ import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.crypto.password.Pbkdf2PasswordEncoder;
 
 import javax.sql.DataSource;
@@ -62,6 +63,21 @@ public class MySecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {
 //        Pbkdf2PasswordEncoder bCryptPasswordEncoder = new Pbkdf2PasswordEncoder(this.secret);
         authenticationManagerBuilder.userDetailsService(userDetailsService);
+//                .passwordEncoder(new PasswordEncoder() {
+//                    @Override
+//                    public String encode(CharSequence charSequence) {
+//                        //加密算法
+//                        //return MD5Util.encode((String)rawPassword);
+//                        return null;
+//                    }
+//
+//                    @Override
+//                    public boolean matches(CharSequence rawPassword, String encodedPassword) {
+//                        //验证  rawPassword用户输入的，encodedPassword数据库查出来的
+//                        //return encodedPassword.equals(MD5Util.encode((String)rawPassword));
+//                        return false;
+//                    }
+//                });
 //                .passwordEncoder(bCryptPasswordEncoder);
     }
 
