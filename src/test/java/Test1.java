@@ -6,15 +6,19 @@ import com.Application;
 import com.book.five.LeadClient;
 import com.book.five.LeadSignQueryRequest;
 import com.book.five.TopLeadClient;
+import com.dao.CodeMapper;
+import com.entity.Code;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.SocketUtils;
 
 import java.io.File;
 import java.io.InputStream;
+import java.util.List;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT, classes = Application.class)
@@ -23,8 +27,8 @@ public class Test1 {
     @Autowired
     private LeadClient topLeadClient;
 
-//    @Autowired
-//    private TopLeadClient leadClient;
+    @Autowired
+    private CodeMapper codeMapper;
 
     @Test
     public void test() throws InstantiationException, IllegalAccessException {
@@ -45,5 +49,15 @@ public class Test1 {
         String path = file.getPath();
         System.out.println(name);
         System.out.println(path);
+    }
+
+    @Test
+    @Transactional
+    public void testInsert(){
+        String code = "test2020-04-16";
+        int i = codeMapper.insertDode(code);
+        System.out.println(i);
+        List<Code> all = codeMapper.findAll();
+        System.out.println(all);
     }
 }

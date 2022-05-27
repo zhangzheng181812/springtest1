@@ -9,4 +9,8 @@
     <select id="findOne" parameterType="java.lang.String" resultType="com.entity.Code">
         select * from code where id = #{0} and code = #{1}
     </select>
+
+    <insert id="insertDode" parameterType="java.lang.String">
+        insert into code (code) values (#{0})
+    </insert>
 </mapper>

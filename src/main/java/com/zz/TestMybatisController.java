@@ -33,7 +33,7 @@ public class TestMybatisController {
 
     @RequestMapping(value = "findOne")
     public void findOne(){
-        Code one = codeMapper.findOne("820", "2");
+        Code one = codeMapper.testSelect("1", "test");
         System.out.println(JsonUtils.toJson(one));
     }
 
