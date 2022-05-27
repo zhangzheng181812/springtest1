@@ -1,5 +1,6 @@
 package com.zz;
 
+import com.entity.Code;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -20,7 +21,8 @@ public class TestJPAController {
 
     @RequestMapping({"/find"})
     public void find() throws JsonProcessingException {
-        System.out.println(objectMapper.writeValueAsString(this.codeService.findAll()));
+        Code one = codeService.findOne(1);
+        Code one2 = codeService.findOne(1);
 //        System.out.println(objectMapper.writeValueAsString(this.codeService.findByCode("2")));
 //        System.out.println(objectMapper.writeValueAsString(this.codeService.findOne(1)));
 //        System.out.println(objectMapper.writeValueAsString(this.codeService.findCodes1("1")));

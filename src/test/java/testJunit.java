@@ -37,17 +37,16 @@ public class testJunit {
         byte[] Str2 = "qwer".getBytes("UTF-8");
         byte[] Str1 = "qwer".getBytes("UTF-8");
         System.out.println(Base64.encodeBase64(Str1));
-        System.out.println(new String (Str2));
+//        System.out.println(new String (Str2));
 
         System.out.println(qwertyuis1);
         System.out.println(new String((new Base64()).encode(qwertyuis1)));
         System.out.println(qwertyuis2);
         System.out.println(new String(Base64.encodeBase64(qwertyuis1)));
-
         System.out.println(qwertyuis3);
-        System.out.println(new String(Base64Util.encode(qwertyuis3)));
+        System.out.println(Base64Util.encode(qwertyuis3));
 
-        System.out.println(new String(Base64Util.encode((qwertyuis1))));
+        System.out.println(Base64Util.encode((qwertyuis1)));
     }
 
 

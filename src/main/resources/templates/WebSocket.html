@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+    <title>Hello World!</title>
+    <script type="text/javascript" th:src="@{https://code.jquery.com/jquery-3.2.1.min.js}"></script>
+    <script>
+
+        var webSocket =null;
+        //判断浏览器是否支持websocket
+        if('WebSocket' in window){
+            webSocket = new WebSocket("ws://127.0.0.1:8090/ws");
+        }else{
+            alert("not")
+        }
+        function appendMessage(message){
+            $("#context").html($("#context").html()+"<br/>"+message);
+        }
+
+        webSocket.onerror =  function () {
+            appendMessage("error");
+        }
+
+        webSocket.onopen = function (event) {
+            appendMessage("open");
+        }
+
+        webSocket.onmessage = function (event) {
+            appendMessage(event.data);
+        }
+
+        webSocket.onclose = function () {
+            appendMessage("close");
+        }
+
+        function sendMessage() {
+            var context = $("#message").val();
+            webSocket.send(context);
+        }
+
+        function closeSocket() {
+            webSocket.close();
+        }
+
+        window.onbeforeunload=function () {
+            webSocket.close();
+        }
+
+    </script>
+</head>
+<body>
+    <h1 inline="text">testWebSocket</h1>
+    <input id="message" type="text">
+    <button onclick="sendMessage()">sendMessage</button>
+    <button onclick="closeSocket()">close</button>
+    <div id="context" ></div>
+</body>
+</html>
