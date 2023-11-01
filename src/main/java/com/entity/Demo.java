@@ -4,6 +4,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import org.hibernate.validator.constraints.Length;
 import org.hibernate.validator.constraints.NotEmpty;
 
+import javax.validation.constraints.NotNull;
+
 /**
  * Created by admin on 2018/8/23.
  */
@@ -14,6 +16,7 @@ public class Demo {
     private long id;
 
     @NotEmpty(message="姓名不能为空")
+    @NotNull
     private String name;
 
     @NotEmpty(message="密码不能为空")

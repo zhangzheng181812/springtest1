@@ -51,13 +51,15 @@ public class AESUtils {
     }
 
 
-//    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) throws Exception {
 //        String key = "g@q35425ERfgdfbh";
 //
 //        String encodeData = "nRf2Ofnr8iztxemjXuXLceuhC05ZzLuYDAs83gVYn+4H3rECjGuzAdLFHoXHicy9ENgkjfSkGIjdre5I3BbYJs304WfDv6RAywZJDNbcQF8ngAmeieI49xDO5jGUyQ4XEBy4LBqZQa7n0Kbf2cgEmG6kzlaZohk/tWkT87c5blhc6M9iiMkSaQJaESKSib8kkv2nM79f6ClPY9b8VgkkatiN9xYJYowmx/2vi4Ww+wKTpERVRYhYSIk+3H80ZsngXfVcoYoK/VjpkBTdHzNa9sfovi2oPFkzsKwqGS5aVLtzlXCK0wipA2z0WCiSiRwtGmdk7pT0I6OZQMS21jweNUVPjNp3avq2/MOrnQ49M6y4CJNeKq2vlnazx7j+XRjW51wXKUVUgB3k+LQVd/VtTLv8OhS5nvCWQYtBqDUTMIRXxo1OcUbDIE3WTjCk6RmNRqX9sVMhc4gFZOB0aRtPMqsawWkbFxudE6WZerpSpoEXLJQe0AyWquEM/MpkzcP3Bx6Pq3lisTqME7EK8ivSoK9c2y7iYBxecw4IMYfXbVXW3r08S60kb43NJW21YL9i";
 ////        String encodeStr = FuluAESUtils.encryptAES("000",key);
 ////        System.out.println("encode str:"+encodeStr);
-//        String content = new String(FuluAESUtils.decryptAES(encodeData, key), "utf-8");
+//        String content = new String(decryptAES(encodeData, key), "utf-8");
 //        System.out.println("content:"+content);
-//    }
+//        System.out.println(Base64Util.encode(encryptAES("zhangzheng", "4cTqD31A9uN0SjGh")));
+        System.out.println(new String(decryptAES("yugeYmGbVT0NaRsgoA9cMQ==", "4cTqD31A9uN0SjGh"),"UTF-8"));
+    }
 }
